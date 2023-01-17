@@ -5,10 +5,12 @@ using System.Collections.Generic;
 namespace CleanArchMvc.Dominio.Entities
 {
     //Classes sealed não podem ser herdadas
-    public sealed class Category
+    public sealed class Category : Entity
     {
-        public int Id { get; private set; }
         public string Name { get; private set; }
+
+        //Neste caso estamos indicando que a classe categoria pode conter uma coleção de produtos
+        public ICollection<Product> Products { get; set; }
 
         public Category(string name)
         {
@@ -21,9 +23,11 @@ namespace CleanArchMvc.Dominio.Entities
             Id = id;
             ValidateDomain(name);
         }
-
-        //Neste caso estamos indicando que a classe categoria pode conter uma coleção de produtos
-        public ICollection<Product> Products { get; set; }
+        
+        public void Update(string name)
+        {
+            ValidateDomain(name);
+        }
 
         private void ValidateDomain(string name)
         {
