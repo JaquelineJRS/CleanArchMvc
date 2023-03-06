@@ -47,7 +47,7 @@ namespace CleanArchMvc.Dominio.Entities
 
             DomainExceptionValidation.When(stock < 0, "O estoque não pode ser negativo");
 
-            DomainExceptionValidation.When(image.Length < 250, "Nome da imagem muito longa, o máximo de 250 caracteres.");
+            DomainExceptionValidation.When(image?.Length > 250, "Nome da imagem muito longa, o máximo de 250 caracteres.");
 
             Name = name;
             Description = description;
