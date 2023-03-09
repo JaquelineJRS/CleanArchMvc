@@ -34,6 +34,8 @@ namespace CleanArchMvc.Dominio.Entities
             DomainExceptionValidation.When(string.IsNullOrEmpty(name), "Nome inválido. name.Name é obrigatório.");
 
             DomainExceptionValidation.When(name.Length < 3, "Nome inválido. O nome não pode conter menos que três caracteres.");
+
+            Name = name;
         }
     }
 }
