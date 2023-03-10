@@ -12,8 +12,4 @@
     <ProjectReference Include="..\CleanArchMvc.Dominio\CleanArchMvc.Dominio.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mappings\" />
-  </ItemGroup>
-
 </Project>
