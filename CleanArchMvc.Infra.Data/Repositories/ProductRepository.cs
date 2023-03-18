@@ -26,16 +26,19 @@ namespace CleanArchMvc.Infra.Data.Repositories
 
         public async Task<Product> GetByIdAsync(int? id)
         {
-            return await _productContext.Products.FindAsync(id);
-        }
-
-        public async Task<Product> GetProductCategoryAsync(int? id)
-        {
-            //Busca na tabela o produto e sua categoria que consta na tabela
-            //eager loading
+            //return await _productContext.Products.FindAsync(id);
             return await _productContext.Products.Include(c => c.Category)
                 .SingleOrDefaultAsync(p => p.Id == id);
         }
+
+        //Para evitar a duplicação de código, utilizaremos o método GetByIdAsync para realizar a busca.
+        //public async Task<Product> GetProductCategoryAsync(int? id)
+        //{
+        //    //Busca na tabela o produto e sua categoria que consta na tabela
+        //    //eager loading
+        //    return await _productContext.Products.Include(c => c.Category)
+        //        .SingleOrDefaultAsync(p => p.Id == id);
+        //}
 
         public async Task<IEnumerable<Product>> GetProductsAsync()
         {
