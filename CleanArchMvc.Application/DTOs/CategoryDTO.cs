@@ -11,6 +11,6 @@ namespace CleanArchMvc.Application.DTOs
         [MinLength(3)]
         [MaxLength(100)]
         [DisplayName("Nome")]
-        public string Nome { get; set; }
+        public string Name { get; set; }
     }
 }

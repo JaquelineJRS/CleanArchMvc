@@ -10,7 +10,7 @@ namespace CleanArchMvc.Dominio.Entities
         public string Name { get; private set; }
 
         //Neste caso estamos indicando que a classe categoria pode conter uma coleção de produtos
-        public ICollection<Product> Products { get; set; }
+        //public ICollection<Product> Products { get; set; }
 
         public Category(string name)
         {

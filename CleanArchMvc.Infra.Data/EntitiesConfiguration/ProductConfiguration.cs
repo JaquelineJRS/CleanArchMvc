@@ -26,9 +26,9 @@ namespace CleanArchMvc.Infra.Data.EntitiesConfiguration
             builder.Property(p => p.Price)
                 .HasPrecision(10, 2);
 
-            builder.HasOne(p => p.Category)
-                .WithMany(c => c.Products)
-                .HasForeignKey(p => p.CategoryId);
+            //builder.HasOne(p => p.Category)
+            //    .WithMany(c => c.Products)
+            //    .HasForeignKey(p => p.CategoryId);
         }
     }
 }
