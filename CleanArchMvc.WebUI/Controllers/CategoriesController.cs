@@ -39,5 +39,32 @@ namespace CleanArchMvc.WebUI.Controllers
             }
             return View(category);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Edit( int? id)
+        {
+            if (id == null) return NotFound();
+            var categoryDTO = await _categoryService.GetById(id);
+            if (categoryDTO == null) NotFound();            
+            return View( categoryDTO);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(CategoryDTO category)
+        {
+            if (ModelState.IsValid)
+            {
+                try 
+                {
+                    await _categoryService.Update(category);
+                }
+                catch
+                {
+                    throw;
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(category);
+        }
     }
 }
