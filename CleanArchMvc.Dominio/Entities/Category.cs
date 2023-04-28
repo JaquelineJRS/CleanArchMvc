@@ -10,7 +10,7 @@ namespace CleanArchMvc.Dominio.Entities
         public string Name { get; private set; }
 
         //Neste caso estamos indicando que a classe categoria pode conter uma coleção de produtos
-        public ICollection<Product> Products { get; set; }
+        //public ICollection<Product> Products { get; set; }
 
         public Category(string name)
         {
@@ -34,6 +34,8 @@ namespace CleanArchMvc.Dominio.Entities
             DomainExceptionValidation.When(string.IsNullOrEmpty(name), "Nome inválido. name.Name é obrigatório.");
 
             DomainExceptionValidation.When(name.Length < 3, "Nome inválido. O nome não pode conter menos que três caracteres.");
+
+            Name = name;
         }
     }
 }
