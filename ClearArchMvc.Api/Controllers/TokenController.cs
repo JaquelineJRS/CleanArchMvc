@@ -1,7 +1,12 @@
 ﻿using CleanArchMvc.Api.Models;
 using CleanArchMvc.Dominio.Account;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace CleanArchMvc.Api.Controllers
@@ -11,21 +16,22 @@ namespace CleanArchMvc.Api.Controllers
     public class TokenController : ControllerBase
     {
         private readonly IAuthenticate _authenticate;
+        private readonly IConfiguration _configuration;
 
-        public TokenController(IAuthenticate authenticate)
+        public TokenController(IAuthenticate authenticate, IConfiguration configuration)
         {
             _authenticate = authenticate ??
                 throw new ArgumentNullException(nameof(authenticate));
+            _configuration = configuration;
         }
 
         [HttpPost("LoginModel")]
         public async Task<ActionResult<UserTokenModel>> Login([FromBody] LoginModel loginModel)
         {
-            var result = await _authenticate.Authenticate(loginModel.Email, loginModel.Password);
+            var result = await _authenticate.Authenticate(loginModel.Email!, loginModel.Password!);
             if (result)
             {
-                //loginModel.GenareteToken();
-                return Ok("Login successful.");
+                return GenerateToken(loginModel);
             }
             else
             {
@@ -33,7 +39,36 @@ namespace CleanArchMvc.Api.Controllers
                 return BadRequest(ModelState);
             }
         }
-        
+
+        private UserTokenModel GenerateToken(LoginModel userInfo)
+        {
+            var claims = new[]
+            {
+                new Claim("email", userInfo.Email),
+                new Claim("qualquervalor", "qualquerclaimdesejada"),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            };
+
+            var keyPrivate = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:SecretKey"]));
+
+            var signingCredentials = new SigningCredentials(keyPrivate, SecurityAlgorithms.HmacSha256);
+
+            var expiration = DateTime.UtcNow.AddMinutes(10);
+
+            var token = new JwtSecurityToken(
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
+                claims: claims,
+                expires: expiration,
+                signingCredentials: signingCredentials
+                );
+
+            return new UserTokenModel
+            {
+                Token = new JwtSecurityTokenHandler().WriteToken(token),
+                Expiration = expiration
+            };
+        }
     }
 }
 
