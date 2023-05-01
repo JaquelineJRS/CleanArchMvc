@@ -21,6 +21,7 @@ namespace CleanArchMvc.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddInfrastructureAPI(Configuration);
+            services.AddInfrastructureJwt(Configuration);
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -39,9 +40,9 @@ namespace CleanArchMvc.Api
             }
 
             app.UseHttpsRedirection();
-
+            app.UseStatusCodePages();
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
