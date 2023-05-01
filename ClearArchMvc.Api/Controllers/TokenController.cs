@@ -28,7 +28,7 @@ namespace CleanArchMvc.Api.Controllers
         [HttpPost("LoginModel")]
         public async Task<ActionResult<UserTokenModel>> Login([FromBody] LoginModel loginModel)
         {
-            var result = await _authenticate.Authenticate(loginModel.Email!, loginModel.Password!);
+            var result = await _authenticate.Authenticate(loginModel.Email, loginModel.Password);
             if (result)
             {
                 return GenerateToken(loginModel);
@@ -37,6 +37,22 @@ namespace CleanArchMvc.Api.Controllers
             {
                 ModelState.AddModelError(string.Empty, "Invalid login.");
                 return BadRequest(ModelState);
+            }
+        }
+
+        [HttpPost("RegisterLogin")]
+        [ApiExplorerSettings(IgnoreApi = true)]
+        public async Task<ActionResult> RegisterLogin([FromBody] LoginModel loginModel)
+        {
+            var result = await _authenticate.RegisterUser(loginModel.Email, loginModel.Password);
+            if (result) 
+            {
+                return Ok("Register successfull");
+            }
+            else 
+            {
+                ModelState.AddModelError(string.Empty, "Invalid register");
+                return BadRequest(ModelState); 
             }
         }
 
