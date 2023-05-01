@@ -5,7 +5,7 @@ Solução desenvolvida durante o curso sobre Clean Architecture com o objetivo d
 
 
 ## 🛠️ Tecnologias
-* **.NET**: Constam duas versões do projeto, uma que utiliza o .NET 6 disponível na branch *main* e *versions/dotnet-5.0*, e outra com .NET 5 disponínel na branch *versions/dotnet-5.0*;
+* **.NET**: Constam duas versões do projeto, uma que utiliza o .NET 6 disponível na branch *main* e *versions/dotnet-6.0*, e outra com .NET 5 disponínel na branch *versions/dotnet-5.0*;
 * **ASP.NET Core**: O projeto Web.UI foi desenvolvido em padrão MVC;
 * **Identify**: A autenticação do projeto Web.UI ocorre através da implementação do Identity;
 * **JWT**: A autenticação do projeto da API ocorre através da implementação do JWT;
