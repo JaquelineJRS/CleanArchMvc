@@ -1,5 +1,6 @@
 # CleanArchMvc
 Solução desenvolvida durante o curso sobre Clean Architecture com o objetivo de mostrar na prática os conceitos de uma arquitetura limpa.
+
 <img height="100" width="100" src="https://user-images.githubusercontent.com/69124311/235538350-f3729324-5475-45bb-8e35-547a3eea227f.png" alt="Ícone teste unitário" />
 
 
