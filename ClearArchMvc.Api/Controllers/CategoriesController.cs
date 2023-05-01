@@ -1,15 +1,15 @@
 ﻿using CleanArchMvc.Application.DTOs;
 using CleanArchMvc.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Query.Internal;
 using System.Collections.Generic;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace CleanArchMvc.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CategoriesController : ControllerBase
     {
         private readonly ICategoryService _categoryService;
@@ -39,7 +39,7 @@ namespace CleanArchMvc.Api.Controllers
         public async Task<ActionResult> CreateAsync([FromBody] CategoryDTO categoryDTO)
         {
             if (categoryDTO == null) return BadRequest("Incorrect data.");
-            
+
             await _categoryService.Add(categoryDTO);
 
             return new CreatedAtRouteResult("GetCategory", new { id = categoryDTO.Id }, categoryDTO);
