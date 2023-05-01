@@ -1,4 +1,4 @@
-﻿using CleanArchMvc.Domain.Entities;
+﻿using CleanArchMvc.Dominio.Entities;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;

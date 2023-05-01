@@ -1,9 +1,9 @@
-using CleanArchMvc.Domain.Entities;
+using CleanArchMvc.Dominio.Entities;
 using FluentAssertions;
 using System;
 using Xunit;
 
-namespace CleanArchMvc.Domain.Test
+namespace CleanArchMvc.Dominio.Test
 {
     public class CategoryUnitTest1
     {
@@ -13,7 +13,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Category(1, "Category Name");
             action.Should()
-                .NotThrow<CleanArchMvc.Domain.Validation.DomainExceptionValidation>();
+                .NotThrow<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>();
         }
 
         //teste para validar a criação da categoria quando esta receber o valor do id inválido
@@ -22,7 +22,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Category(-1, "Category Name");
             action.Should()
-                .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
+                .Throw<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>()
                 .WithMessage("Valor inválido para o Id, não pode ser menor do que zero.");
         }
 
@@ -31,7 +31,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Category(1, "Ca");
             action.Should()
-                .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
+                .Throw<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>()
                 .WithMessage("Nome inválido. O nome não pode conter menos que três caracteres.");
         }
 
@@ -40,7 +40,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Category(1, "");
             action.Should()
-                .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
+                .Throw<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>()
                 .WithMessage("Nome inválido. name.Name é obrigatório.");
         }
 
@@ -49,7 +49,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Category(1, null);
             action.Should()
-                .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>();
+                .Throw<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>();
         }
     }
 }

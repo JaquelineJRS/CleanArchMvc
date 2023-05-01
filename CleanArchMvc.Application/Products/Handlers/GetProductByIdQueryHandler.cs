@@ -1,6 +1,6 @@
 ﻿using CleanArchMvc.Application.Products.Queries;
-using CleanArchMvc.Domain.Entities;
-using CleanArchMvc.Domain.Interfaces;
+using CleanArchMvc.Dominio.Entities;
+using CleanArchMvc.Dominio.Interfaces;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;

@@ -1,4 +1,4 @@
-﻿using CleanArchMvc.Domain.Account;
+﻿using CleanArchMvc.Dominio.Account;
 using CleanArchMvc.WebUI.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;

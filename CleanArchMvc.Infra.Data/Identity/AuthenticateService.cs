@@ -1,4 +1,4 @@
-﻿using CleanArchMvc.Domain.Account;
+﻿using CleanArchMvc.Dominio.Account;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
 

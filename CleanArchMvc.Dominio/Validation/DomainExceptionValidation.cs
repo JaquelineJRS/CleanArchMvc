@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CleanArchMvc.Domain.Validation
+namespace CleanArchMvc.Dominio.Validation
 {
     public class DomainExceptionValidation : Exception
     {

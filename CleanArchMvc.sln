@@ -6,14 +6,26 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Domain", "CleanArchMvc.Dominio\CleanArchMvc.Domain.csproj", "{446DBAFC-B066-42F9-A9D2-B3CA8353E19A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Application", "CleanArchMvc.Application\CleanArchMvc.Application.csproj", "{933D0E2F-34D6-4380-9BCC-59AA7E06234C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{446DBAFC-B066-42F9-A9D2-B3CA8353E19A} = {446DBAFC-B066-42F9-A9D2-B3CA8353E19A}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Infra.Data", "CleanArchMvc.Infra.Data\CleanArchMvc.Infra.Data.csproj", "{3619A336-7F38-47FE-9523-B0765398BD0F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{446DBAFC-B066-42F9-A9D2-B3CA8353E19A} = {446DBAFC-B066-42F9-A9D2-B3CA8353E19A}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Infra.IoC", "CleanArchMvc.Infra.IoC\CleanArchMvc.Infra.IoC.csproj", "{C40D19AB-C87E-470A-B8AB-E1D70EF195F8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{446DBAFC-B066-42F9-A9D2-B3CA8353E19A} = {446DBAFC-B066-42F9-A9D2-B3CA8353E19A}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.WebUI", "CleanArchMvc.WebUI\CleanArchMvc.WebUI.csproj", "{41864ADD-6D48-4151-AF0A-ED6334D01DF4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Domain.Test", "CleanArchMvc.Domain.Test\CleanArchMvc.Domain.Test.csproj", "{FDBAEB2C-2918-4B96-AF40-5485BFA6B577}"
+	ProjectSection(ProjectDependencies) = postProject
+		{446DBAFC-B066-42F9-A9D2-B3CA8353E19A} = {446DBAFC-B066-42F9-A9D2-B3CA8353E19A}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Api", "ClearArchMvc.Api\CleanArchMvc.Api.csproj", "{D1F69D1F-BA67-48F9-8148-A5D2C18B88EB}"
 EndProject
