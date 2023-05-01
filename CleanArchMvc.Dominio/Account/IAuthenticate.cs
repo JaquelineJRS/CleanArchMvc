@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace CleanArchMvc.Dominio.Account
+namespace CleanArchMvc.Domain.Account
 {
     public interface IAuthenticate
     {

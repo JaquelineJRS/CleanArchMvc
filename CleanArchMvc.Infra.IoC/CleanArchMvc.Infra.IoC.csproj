@@ -12,7 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CleanArchMvc.Application\CleanArchMvc.Application.csproj" />
-    <ProjectReference Include="..\CleanArchMvc.Dominio\CleanArchMvc.Dominio.csproj" />
+    <ProjectReference Include="..\CleanArchMvc.Dominio\CleanArchMvc.Domain.csproj" />
     <ProjectReference Include="..\CleanArchMvc.Infra.Data\CleanArchMvc.Infra.Data.csproj" />
   </ItemGroup>
 

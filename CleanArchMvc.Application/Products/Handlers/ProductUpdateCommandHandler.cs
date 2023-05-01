@@ -1,6 +1,6 @@
 ﻿using CleanArchMvc.Application.Products.Commands;
-using CleanArchMvc.Dominio.Entities;
-using CleanArchMvc.Dominio.Interfaces;
+using CleanArchMvc.Domain.Entities;
+using CleanArchMvc.Domain.Interfaces;
 using MediatR;
 using System;
 using System.Collections.Generic;

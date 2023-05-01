@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using CleanArchMvc.Application.DTOs;
 using CleanArchMvc.Application.Interfaces;
-using CleanArchMvc.Dominio.Entities;
-using CleanArchMvc.Dominio.Interfaces;
+using CleanArchMvc.Domain.Entities;
+using CleanArchMvc.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,5 +1,5 @@
 ﻿using CleanArchMvc.Api.Models;
-using CleanArchMvc.Dominio.Account;
+using CleanArchMvc.Domain.Account;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;

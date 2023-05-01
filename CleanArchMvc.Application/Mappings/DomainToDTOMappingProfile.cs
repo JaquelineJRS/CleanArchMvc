@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using CleanArchMvc.Application.DTOs;
-using CleanArchMvc.Dominio.Entities;
+using CleanArchMvc.Domain.Entities;
 
 namespace CleanArchMvc.Application.Mappings
 {

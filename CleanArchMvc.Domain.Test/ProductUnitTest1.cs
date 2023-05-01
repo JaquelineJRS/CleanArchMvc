@@ -1,4 +1,4 @@
-﻿using CleanArchMvc.Dominio.Entities;
+﻿using CleanArchMvc.Domain.Entities;
 using FluentAssertions;
 using System;
 using Xunit;
@@ -12,7 +12,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Product(1, "Product Name", "Product Description", 9.99m, 99, "product image");
             action.Should()
-                .NotThrow<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>();
+                .NotThrow<CleanArchMvc.Domain.Validation.DomainExceptionValidation>();
         }
 
         [Fact]
@@ -20,7 +20,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Product(-1, "Product Name", "Product Description", 9.99m, 99, "product image");
             action.Should()
-                .Throw<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>()
+                .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
                 .WithMessage("Valor inválido para o Id, não pode ser menor do que zero.");
         }
 
@@ -29,7 +29,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Product(1, "Pa", "Product Description", 9.99m, 99, "product image");
             action.Should()
-                .Throw<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>()
+                .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
                 .WithMessage("Nome inválido. O nome não pode conter menos que três caracteres.");
         }
 
@@ -38,7 +38,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Product(1, "", "Product Description", 9.99m, 99, "product image");
             action.Should()
-                .Throw<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>()
+                .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
                 .WithMessage("Nome inválido. name.Name é obrigatório.");
         }
 
@@ -47,7 +47,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Category(1, null);
             action.Should()
-                .Throw<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>();
+                .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>();
         }
 
         [Fact]
@@ -55,7 +55,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Product(1, "Product Name", "Pa", 9.99m, 99, "product image");
             action.Should()
-                .Throw<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>()
+                .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
                 .WithMessage("Descrição inválida. O campo não pode conter menos que três caracteres.");
         }
 
@@ -64,7 +64,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Product(1, "Product Name", "Product Description", -9.99m, 99, "product image");
             action.Should()
-                .Throw<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>()
+                .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
                 .WithMessage("O preço não pode ser negativo");
         }
 
@@ -73,7 +73,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Product(1, "Product Name", "Product Description", 9.99m, -99, "product image");
             action.Should()
-                .Throw<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>()
+                .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
                 .WithMessage("O estoque não pode ser negativo");
         }
 
@@ -84,7 +84,7 @@ namespace CleanArchMvc.Domain.Test
                 99, "product image toooooooooooooooooooooooooooooooooooooooooooo loooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooogggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg");
 
             action.Should()
-                .Throw<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>()
+                .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
                  .WithMessage("Nome da imagem muito longa, o máximo de 250 caracteres.");
         }
 
@@ -93,7 +93,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Product(1, "Product Name", "Product Description", 9.99m, 99, null);
             action.Should()
-                .NotThrow<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>();
+                .NotThrow<CleanArchMvc.Domain.Validation.DomainExceptionValidation>();
         }
 
         [Fact]
@@ -101,7 +101,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Product(1, "Product Name", "Product Description", 9.99m, 99, "");
             action.Should()
-                .NotThrow<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>();
+                .NotThrow<CleanArchMvc.Domain.Validation.DomainExceptionValidation>();
         }
 
         [Theory]
@@ -110,7 +110,7 @@ namespace CleanArchMvc.Domain.Test
         {
             Action action = () => new Product(1, "Product Name", "Product Description", 9.99m, value, "product image");
             action.Should()
-                .Throw<CleanArchMvc.Dominio.Validation.DomainExceptionValidation>()
+                .Throw<CleanArchMvc.Domain.Validation.DomainExceptionValidation>()
                 .WithMessage("O estoque não pode ser negativo");
         }
     }

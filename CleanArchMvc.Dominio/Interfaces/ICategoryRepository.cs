@@ -1,8 +1,8 @@
-﻿using CleanArchMvc.Dominio.Entities;
+﻿using CleanArchMvc.Domain.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace CleanArchMvc.Dominio.Interfaces
+namespace CleanArchMvc.Domain.Interfaces
 {
     public interface ICategoryRepository
     {

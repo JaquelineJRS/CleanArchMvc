@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Dominio", "CleanArchMvc.Dominio\CleanArchMvc.Dominio.csproj", "{446DBAFC-B066-42F9-A9D2-B3CA8353E19A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Domain", "CleanArchMvc.Dominio\CleanArchMvc.Domain.csproj", "{446DBAFC-B066-42F9-A9D2-B3CA8353E19A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Application", "CleanArchMvc.Application\CleanArchMvc.Application.csproj", "{933D0E2F-34D6-4380-9BCC-59AA7E06234C}"
 EndProject
@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.WebUI", "Clean
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Domain.Test", "CleanArchMvc.Domain.Test\CleanArchMvc.Domain.Test.csproj", "{FDBAEB2C-2918-4B96-AF40-5485BFA6B577}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchMvc.Api", "ClearArchMvc.Api\CleanArchMvc.Api.csproj", "{D1F69D1F-BA67-48F9-8148-A5D2C18B88EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchMvc.Api", "ClearArchMvc.Api\CleanArchMvc.Api.csproj", "{D1F69D1F-BA67-48F9-8148-A5D2C18B88EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

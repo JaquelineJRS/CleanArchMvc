@@ -1,4 +1,4 @@
-﻿using CleanArchMvc.Dominio.Entities;
+﻿using CleanArchMvc.Domain.Entities;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;

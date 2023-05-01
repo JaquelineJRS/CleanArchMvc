@@ -1,6 +1,6 @@
-﻿using CleanArchMvc.Dominio.Validation;
+﻿using CleanArchMvc.Domain.Validation;
 
-namespace CleanArchMvc.Dominio.Entities
+namespace CleanArchMvc.Domain.Entities
 {
     //Classes sealed não podem ser herdadas
     public sealed class Product : Entity

@@ -1,4 +1,4 @@
-﻿using CleanArchMvc.Dominio.Account;
+﻿using CleanArchMvc.Domain.Account;
 using Microsoft.AspNetCore.Identity;
 using System;
 

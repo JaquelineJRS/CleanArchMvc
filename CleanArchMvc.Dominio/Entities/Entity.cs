@@ -1,4 +1,4 @@
-﻿namespace CleanArchMvc.Dominio.Entities
+﻿namespace CleanArchMvc.Domain.Entities
 {
     public abstract class Entity
     {
